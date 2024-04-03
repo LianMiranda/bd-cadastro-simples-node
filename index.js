@@ -21,7 +21,7 @@ const setup = async () => {
         }=req.body;
         const novaPessoa = new pessoa({nome: nome, idade: idade, cpf: cpf, ra: ra});
         await novaPessoa.save();
-        res.send(novaPessoa)
+        res.send(novaPessoa);
     });
 
     app.get("/pessoas", async (req, res) =>{
@@ -30,11 +30,9 @@ const setup = async () => {
 
     })
 
-
-
-
     app.get('/', (req, res) => {
         console.log("Funcionou");
+        res.send("Foi");
     });
     
     app.listen(3000, ()=>{
